@@ -4,6 +4,7 @@ import Logo from "../logo/logo"
 import Nav from "../nav/nav"
 
 function Header(){
+  console.log("hola");
   return(
     <div className="navbar">
       <Logo/>
