@@ -1,0 +1,17 @@
+.logo{
+  display: block;
+  padding: 2rem 2rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  background-color: rgb(0, 0, 0);
+
+}
+
+.logo span{
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(8, 227, 3, 0.85);
+}

@@ -1,0 +1,11 @@
+.nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+}
+.link a{
+  font-size: 1rem;
+  color: #fff;
+}
