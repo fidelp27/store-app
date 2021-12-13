@@ -11,7 +11,7 @@ const ItemListContainer=({saludo})=>{
 
 
 useEffect(()=>{
-  setIsLoading(true)
+  setIsLoading(true )
   const getProducts = new Promise((resolve, reject)=>{
     setTimeout(()=>{
       resolve(products)
