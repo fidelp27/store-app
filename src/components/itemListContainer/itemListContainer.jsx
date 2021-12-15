@@ -3,26 +3,25 @@ import {products} from "../item/items"
 import ItemList from "../item/itemList"
 import "./itemListContainer.css"
 import {useParams} from "react-router-dom"
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer=({saludo})=>{
   const[items, setItems] = useState([])
   const[isLoading, setIsLoading]= useState(true)
-  const { category } = useParams()
+  const { catid } = useParams()
 
 
 
 useEffect(()=>{
   setIsLoading(true )
   const db = getFirestore()
-    const ref = collection(db, 'products')
+    const ref = catid ? query(collection(db, 'products'), where("category","==", catid))
+    : collection(db, 'products')  
 
     getDocs(ref)
       .then((snapshot) => {
         const filteredItems = snapshot.docs.map((p) => p.data())
-        return category
-          ? setItems(filteredItems.filter((p) => p.category === category))
-          : setItems(filteredItems)
+        return  setItems(filteredItems)
   })
   .catch((err) => {
     console.log(err);
@@ -30,7 +29,7 @@ useEffect(()=>{
   .finally(()=>{
     setIsLoading(false)
   })
-},[category])
+},[catid])
 
 
   return(isLoading ?

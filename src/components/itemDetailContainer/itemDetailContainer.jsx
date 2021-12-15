@@ -3,12 +3,12 @@ import {products} from "../item/items"
 import ItemDetail from "../itemDetail/itemDetail"
 import {useParams} from "react-router-dom"
 import { CartContext } from '../../context/CartContext'
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection, getDocs,  query, where } from 'firebase/firestore'
 
 const ItemDetailContainer =()=>{
 
   const[item, setItem]= useState([])
-  const { id } = useParams()
+  const { itemid } = useParams()
   const[isLoading, setIsLoading] = useState(true)
   const[irAlCarrito, setIrAlCarrito] = useState(false)
   const { addToCart } = useContext(CartContext)
@@ -16,15 +16,15 @@ const ItemDetailContainer =()=>{
   useEffect(()=>{
     setIsLoading(true)
     const db = getFirestore()
-    const ref = collection(db, 'products')
+    const ref = query(collection(db, 'products'), where("id","==", itemid))
 
     getDocs(ref)
       .then((snapshot) => {
         const itemFind = snapshot.docs.map((prod) => prod.data())
 
 
-        setItem(itemFind.find((prod) => prod.id === parseInt(id)))
-        setIsLoading(false)
+        setItem(itemFind[0])
+       
 
     })
     .catch((err)=>{
@@ -33,7 +33,7 @@ const ItemDetailContainer =()=>{
     .finally(()=>{
       setIsLoading(false)
     })
-  },[id])
+  },[itemid])
 
   const onAdd = (cantidad) =>{
     addToCart(item, cantidad)
