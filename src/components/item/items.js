@@ -6,6 +6,7 @@ export const products = [
         id: '1',
         category: 'Peliculas',
         img: '/assets/tarantino-movie.png',
+        count: 0
     },
     {
         name: "Bruce Lee",
@@ -14,6 +15,7 @@ export const products = [
         id: '11',
         category: 'Peliculas',
         img: '/assets/bruce-movie.png',
+        count: 0
     },
     {
         name: "Pulp Fiction",
@@ -22,6 +24,7 @@ export const products = [
         id: '12',
         category: 'Peliculas',
         img: '/assets/pulp-movie.jpg',
+        count: 0
     },
     {
         name: 'Coder',
@@ -30,6 +33,7 @@ export const products = [
         id: '2',
         category: 'Programacion',
         img: '/assets/dev-program.png',
+        count: 0
     },
     {
         name: 'Peaky Blinders',
@@ -38,6 +42,7 @@ export const products = [
         id: '3',
         category: 'Series',
         img: '/assets/peaky-series.png',
+        count: 0
     },
     {
         name: 'Stranger Things',
@@ -46,6 +51,7 @@ export const products = [
         id: '9',
         category: 'Series',
         img: '/assets/stranger-series.jpg',
+        count: 0
     },
     {
         name: 'Breaking Bad',
@@ -54,6 +60,7 @@ export const products = [
         id: '10',
         category: 'Series',
         img: '/assets/breaking-series.jpg',
+        count: 0
     },
     {
         name: 'Play Station',
@@ -62,6 +69,7 @@ export const products = [
         id: '4',
         category:'Gamer',
         img: '/assets/play-gamer.png',
+        count: 0
     },
     {
         name: 'Mortal Kombat',
@@ -70,6 +78,7 @@ export const products = [
         id: '7',
         category:'Gamer',
         img: '/assets/mortal-gamer.png',
+        count: 0
     },
     {
         name: 'Street Fighter',
@@ -78,6 +87,7 @@ export const products = [
         id: '8',
         category:'Gamer',
         img: '/assets/street-gamer.png',
+        count: 0
     },
     {
         name: 'Coder Rex',
@@ -86,6 +96,7 @@ export const products = [
         id: '5',
         category: 'Programacion',
         img: '/assets/dev-program3.png',
+        count: 0
     },
     {
         name: 'Coder Evolution',
@@ -94,5 +105,6 @@ export const products = [
         id: '6',
         category: 'Programacion',
         img: '/assets/dev-program1.png',
+        count: 0
     }
 ];

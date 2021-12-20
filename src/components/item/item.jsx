@@ -2,7 +2,13 @@ import React from "react"
 import "./item.css"
 import {Link} from "react-router-dom"
 
+
+
+
 const Item = ( {item} )=>{
+
+  
+  console.log(item);
   return(
     <Link to={`/product/${item.id}`}>
     <div className="card-container">

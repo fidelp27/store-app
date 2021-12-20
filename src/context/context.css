@@ -1,0 +1,30 @@
+.form-auth{
+    width: 30vw;
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: aquamarine;
+    border-radius: 1rem;
+}
+.form-auth:last-child{
+    text-align: center;
+}
+.form-auth input{
+    width: 90%;
+    margin: 1rem auto;
+    border: none;
+}
+.form-auth h1{
+    text-align: center;
+}
+.form-auth button{
+    width: 12vw;
+    height: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: .5rem;
+    text-align: center;
+}
+.form-auth button:hover{
+    background-color: blueviolet;
+    cursor: pointer;
+}

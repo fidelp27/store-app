@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react"
-import {products} from "../item/items"
 import ItemList from "../item/itemList"
 import "./itemListContainer.css"
 import {useParams} from "react-router-dom"
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
+import { useDataUser } from "../../context/ContextAuth"
 
 const ItemListContainer=({saludo})=>{
   const[items, setItems] = useState([])
@@ -31,13 +31,15 @@ useEffect(()=>{
   })
 },[catid])
 
+const user = useDataUser()
+
 
   return(isLoading ?
     <div className="preloader-container">
       <img className="preloader" src="../assets/preloader.gif" alt="gif"/>
     </div> :
     <div  className="main-container">
-      <h1>{saludo}</h1>
+      <h1>{saludo} {user.email} </h1>
       <ItemList items={items}/>
     </div>
   )

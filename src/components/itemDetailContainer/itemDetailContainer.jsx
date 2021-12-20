@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from "react"
-import {products} from "../item/items"
 import ItemDetail from "../itemDetail/itemDetail"
 import {useParams} from "react-router-dom"
 import { CartContext } from '../../context/CartContext'
@@ -21,11 +20,7 @@ const ItemDetailContainer =()=>{
     getDocs(ref)
       .then((snapshot) => {
         const itemFind = snapshot.docs.map((prod) => prod.data())
-
-
         setItem(itemFind[0])
-       
-
     })
     .catch((err)=>{
       console.log(err);
